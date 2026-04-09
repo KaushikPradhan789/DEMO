@@ -212,7 +212,7 @@ export const EmergencyPulse = () => {
     >
       <div className="relative group">
         <div className="absolute inset-0 bg-pulse-red rounded-full animate-ping opacity-20 group-hover:opacity-40 transition-opacity" />
-        <a href="tel:+1234567890" className="relative w-16 h-16 bg-pulse-red text-white rounded-full flex items-center justify-center shadow-2xl shadow-pulse-red/40 hover:scale-110 transition-transform">
+        <a href="tel:+91 9835910848" className="relative w-16 h-16 bg-pulse-red text-white rounded-full flex items-center justify-center shadow-2xl shadow-pulse-red/40 hover:scale-110 transition-transform">
           <Phone className="w-6 h-6" />
           <div className="absolute right-full mr-4 bg-healing-green text-white px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
             Urgent Care Pulse

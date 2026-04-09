@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-pulse-red: #d4a373; /* Amber Gold */
+  --color-healing-green: #e9edc9; /* Soft Sand (Text) */
+  --color-healing-light: #2d3021; /* Mid Olive (Cards) */
+  --color-comfort-cream: #1a1c14; /* Deep Olive (Background) */
+}
+
+@layer base {
+  body {
+    @apply bg-comfort-cream text-healing-green font-sans antialiased overflow-x-hidden text-[15px];
+  }
+}
+
+@layer utilities {
+  .glass-morphism {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom Pulse Animation */
+@keyframes pulse-ring {
+  0% { transform: scale(0.33); }
+  80%, 100% { opacity: 0; }
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1); }
+  100% { transform: scale(0.8); }
+}
+
+.pulse-animation {
+  position: relative;
+}
+
+.pulse-animation::before {
+  content: '';
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: -100%;
+  left: -100%;
+  border-radius: 50%;
+  background-color: var(--color-pulse-red);
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+.pulse-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: var(--color-pulse-red);
+  animation: pulse-dot 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+}
